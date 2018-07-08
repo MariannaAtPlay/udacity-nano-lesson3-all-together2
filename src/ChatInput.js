@@ -17,19 +17,18 @@ class ChatInput extends Component {
         this.setState({message: e.target.value})
     }
 
-        // handleSubmit = (e) => {
-        //     e.preventDefault();
-        //     this.props.addMessage(this.props.username, this.state.message);
-        //     this.setState({message: ''})
-        // }
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.addMessage(this.props.username, this.state.message);
+        this.setState({message: ''})
+    }
 
     render() {
         return (
             <div>
                 <form 
                     className="input-group" 
-                    //onSubmit={this.handleSubmit}
-                    onSubmit={() => this.props.addMessage(this.props.username, this.state.message)}
+                    onSubmit={this.handleSubmit}
                 >
                     <input 
                         type="text" 
